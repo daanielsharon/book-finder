@@ -2,6 +2,7 @@ export interface BookResponse {
   kind: string;
   totalItems: number;
   items: {
+    id: string;
     volumeInfo: {
       title: string;
       authors: string[];

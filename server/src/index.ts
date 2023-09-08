@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const port: number = 8080;
 
-const pool = new Pool(process.env.MONGO_DATABASE);
+export const pool = new Pool(process.env.MONGO_DATABASE);
 pool
   .connect({
     username: process.env.MONGO_USERNAME,
