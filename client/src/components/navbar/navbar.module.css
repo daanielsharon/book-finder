@@ -1,0 +1,11 @@
+.top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+@media screen and (min-width: 1030px) {
+  .center {
+    padding: 5px 30%;
+  }
+}

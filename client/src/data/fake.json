@@ -1,0 +1,133 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": [
+    {
+      "id": "BzqemZAlFdMC",
+      "title": "Jungian Dream Interpretation",
+      "authors": ["James Albert Hall"],
+      "rating": 3,
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=BzqemZAlFdMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=BzqemZAlFdMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "PJMVLvWqTbQC",
+      "title": "The Ultimate Dictionary of Dream Language",
+      "authors": ["Briceida Ryan"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=PJMVLvWqTbQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=PJMVLvWqTbQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "ckj9DwAAQBAJ",
+      "title": "My Dream [Jilid 2]",
+      "authors": [
+        "Ismi Isti’anah ",
+        "Raihana Balqis ",
+        "Sheyla Najwatul Maula ",
+        "Mahaldika Cesrany ",
+        "Leila Niwanda ",
+        "Rani Amrista ",
+        "Farhanna Mar’i ",
+        "Nurbinazir Ulfa ",
+        "Ela Ummu Khadijah ",
+        "Dwi L-@ ",
+        "Khillatul Wafiroh"
+      ],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=ckj9DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=ckj9DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "8_0zigLFtFAC",
+      "title": "Recurring Dream Symbols",
+      "authors": ["Kathleen Sullivan"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "oULuAAAAMAAJ",
+      "title": "The Dream, Mirror of Conscience",
+      "authors": ["Werner Wolff"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=oULuAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=oULuAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "Zuq5T_FhHnIC",
+      "title": "The American Dream and the Public Schools",
+      "authors": [
+        "Jennifer L. Hochschild",
+        "Nathan Scovronick",
+        "Nathan B. Scovronick"
+      ],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=Zuq5T_FhHnIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=Zuq5T_FhHnIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "1qVWAAAAYAAJ",
+      "title": "Dream Messages",
+      "authors": ["Donna Peerce", "Jackie Allen"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=1qVWAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=1qVWAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "_W1RAAAAYAAJ",
+      "title": "The Dream",
+      "authors": ["Nancy Parsifal-Charles"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=_W1RAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=_W1RAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "AxqqCgAAQBAJ",
+      "title": "Dream Wedding",
+      "authors": ["J. J. DiBenedetto"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=AxqqCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=AxqqCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "id": "y41FDwAAQBAJ",
+      "title": "Culture, Music Education, and the Chinese Dream in Mainland China",
+      "authors": ["Wai-Chung Ho"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=y41FDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=y41FDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    }
+  ]
+}

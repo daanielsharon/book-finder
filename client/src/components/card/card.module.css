@@ -1,0 +1,25 @@
+.card {
+  width: 200px;
+  height: max-content;
+  border-radius: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card-image {
+  width: max-content;
+  height: max-content;
+}
+
+.font-size-title {
+  font-size: 1.5rem;
+}
+
+.font-size-subtitle {
+  font-size: 1rem;
+}
+
+.font-size-paragraph {
+  font-size: 0.9rem;
+}

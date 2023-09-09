@@ -1,0 +1,7 @@
+.content {
+  margin-top: 60px;
+  padding: 50px 20%;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}

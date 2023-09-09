@@ -158,6 +158,25 @@ components:
           title:
             type: string
             example: Jungian Dream Interpretation
+          authors:
+            type: array
+            items:
+              type: string
+              example: James Albert Hall
+          rating:
+            type: number
+          thumbnail:
+            type: object
+            properties:
+              size:
+                type: object
+                properties:
+                  small:
+                    type: string
+                    example: "http://something"
+                  normal:
+                    type: string
+                    example: "http://something"
     errors:
       type: object
       properties:
