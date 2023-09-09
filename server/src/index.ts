@@ -1,6 +1,6 @@
-import { app } from "./app/web.ts";
-import { Pool } from "./pool.ts";
+import { app } from "./app/web";
 import "dotenv/config";
+import { Pool } from "./pool";
 
 const port: number = 8080;
 

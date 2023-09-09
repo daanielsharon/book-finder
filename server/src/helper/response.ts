@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { Code } from "../ts/enum/json.ts";
+import { Code } from "../ts/enum/json";
 
 export class JSON {
   private static statusToCode: {
@@ -9,6 +9,7 @@ export class JSON {
     400: "Bad Request",
     404: "Not Found",
     500: "Internal Server Error",
+    503: "Service Unavailable",
   };
 
   static send(res: Response, code: Code, data: any) {

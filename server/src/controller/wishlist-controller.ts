@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { wishlistService } from "../service/wishlist-service.ts";
-import { JSON } from "../helper/response.ts";
-import { Code } from "../ts/enum/json.ts";
-import { ResponseError } from "../error/response-error.ts";
+import { wishlistService } from "../service/wishlist-service";
+import { JSON } from "../helper/response";
+import { Code } from "../ts/enum/json";
+import { ResponseError } from "../error/response-error";
 
 class WishlistController {
   async create(request: Request, response: Response, next: NextFunction) {

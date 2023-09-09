@@ -1,11 +1,11 @@
 import { Request } from "express";
-import { validate } from "../validation/validation.ts";
-import { WishlistValidation } from "../validation/wishlist.ts";
-import { WebDelete, WebSave } from "../ts/interface/wishlist.js";
-import { bookService } from "./book-service.ts";
-import { ResponseError } from "../error/response-error.ts";
-import { Code } from "../ts/enum/json.ts";
-import { wishlistRepo } from "../repository/wishlist-repo.ts";
+import { validate } from "../validation/validation";
+import { WishlistValidation } from "../validation/wishlist";
+import { WebDelete, WebSave } from "../ts/interface/wishlist";
+import { bookService } from "./book-service";
+import { ResponseError } from "../error/response-error";
+import { Code } from "../ts/enum/json";
+import { wishlistRepo } from "../repository/wishlist-repo";
 
 class WishlistService {
   async create(request: Request): Promise<WebSave> {

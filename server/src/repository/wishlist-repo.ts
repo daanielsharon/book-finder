@@ -1,12 +1,8 @@
-import { ResponseError } from "../error/response-error.ts";
-import { pool } from "../index.ts";
-import { Collection } from "../ts/enum/collection.ts";
-import { Code } from "../ts/enum/json.ts";
-import {
-  DomainDelete,
-  DomainGet,
-  DomainSave,
-} from "../ts/interface/wishlist.ts";
+import { ResponseError } from "../error/response-error";
+import { pool } from "../index";
+import { Collection } from "../ts/enum/collection";
+import { Code } from "../ts/enum/json";
+import { DomainDelete, DomainGet, DomainSave } from "../ts/interface/wishlist";
 
 class WishlistRepo {
   async save({ uid, bookId }: DomainSave) {

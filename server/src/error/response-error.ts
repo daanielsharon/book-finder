@@ -1,4 +1,4 @@
-import { Code } from "../ts/enum/json.ts";
+import { Code } from "../ts/enum/json";
 
 export class ResponseError extends Error {
   public status: Code | null;

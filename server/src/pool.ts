@@ -1,5 +1,5 @@
 import { Db, MongoClient } from "mongodb";
-import { Connection } from "./ts/interface/connection.ts";
+import { Connection } from "./ts/interface/connection";
 
 export class Pool {
   uri: string | null;
@@ -17,7 +17,9 @@ export class Pool {
     password,
     port,
   }: Connection): Promise<void> {
-    this.uri = `mongodb://${username}:${password}@localhost:${port}`;
+    this.uri = `mongodb://${username}:${password}@${
+      process.env.ENV === "dev" ? "localhost" : "mongo"
+    }:${port}`;
     this.client = new MongoClient(this.uri, {
       connectTimeoutMS: 5000,
       serverSelectionTimeoutMS: 500,

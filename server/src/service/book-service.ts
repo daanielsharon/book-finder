@@ -1,15 +1,16 @@
-import { ResponseError } from "../error/response-error.ts";
-import { HTTPS } from "../helper/request.ts";
-import { Code } from "../ts/enum/json.ts";
-import { BookResponse } from "../ts/interface/book.ts";
+import { ResponseError } from "../error/response-error";
+import { HTTPS } from "../helper/request";
+import { Code } from "../ts/enum/json";
+import { BookResponse } from "../ts/interface/book";
 class BookService {
   async get(query: string) {
-    const response: BookResponse = await new HTTPS<BookResponse>().get(
-      `https://www.googleapis.com/books/v1/volumes?q=${query}`
-    );
+    const response = await new HTTPS<BookResponse>().get(query);
 
     if (!response)
-      throw new ResponseError(Code.NOT_FOUND, "no response from google-book");
+      throw new ResponseError(
+        Code.SERVICE_UNAVAILABLE,
+        "no response from google-book"
+      );
 
     return response.items?.map((item) => ({
       id: item.id,

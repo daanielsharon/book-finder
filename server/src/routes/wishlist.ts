@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { wishlistController } from "../controller/wishlist-controller.ts";
+import { wishlistController } from "../controller/wishlist-controller";
 
 export const wishlist: Router = Router();
 wishlist.post("/", wishlistController.create);

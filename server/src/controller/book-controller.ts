@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { bookService } from "../service/book-service.ts";
-import { JSON } from "../helper/response.ts";
-import { Code } from "../ts/enum/json.ts";
-import { ResponseError } from "../error/response-error.ts";
+import { bookService } from "../service/book-service";
+import { JSON } from "../helper/response";
+import { Code } from "../ts/enum/json";
+import { ResponseError } from "../error/response-error";
 
 class BookController {
   async get(request: Request, response: Response, next: NextFunction) {

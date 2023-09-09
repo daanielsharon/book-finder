@@ -1,6 +1,6 @@
 import express from "express";
-import { v1 } from "../routes/v1.ts";
-import { errorMiddleware } from "../middleware/error-middleware.ts";
+import { v1 } from "../routes/v1";
+import { errorMiddleware } from "../middleware/error-middleware";
 
 export const app: express.Application = express();
 app.use(express.json());
