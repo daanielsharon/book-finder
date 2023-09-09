@@ -1,5 +1,6 @@
 import navbar from "./navbar.module.css";
 import reactImg from "../../assets/react.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -28,9 +29,13 @@ const Navbar = () => {
 
       <div id="navbarBasicExample" className="navbar-menu">
         <div className="navbar-start">
-          <a className="navbar-item">Home</a>
+          <Link className="navbar-item" to={"/"}>
+            Home
+          </Link>
 
-          <a className="navbar-item">Wishlist</a>
+          <Link className="navbar-item" to={"/wishlist"}>
+            Wishlist
+          </Link>
 
           {/* <div className="navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">More</a>

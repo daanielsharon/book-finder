@@ -1,15 +1,26 @@
 .card {
-  width: 200px;
-  height: max-content;
+  max-width: 500px;
+  max-height: 500px;
   border-radius: 10px;
-  border: 1px solid gray;
   border-radius: 10px;
   padding: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  box-sizing: border-box;
+  flex: 1 1 350px;
 }
 
-.card-image {
-  width: max-content;
-  height: max-content;
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.author {
+  /* display: flex;
+  flex-direction: column; */
+  list-style-type: circle;
 }
 
 .font-size-title {
