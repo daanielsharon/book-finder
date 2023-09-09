@@ -1,0 +1,227 @@
+openapi: "3.0.3"
+
+info:
+  title: xyz book finder
+  description: find your book and love it!
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+  /v1/book:
+    get:
+      tags:
+        - book
+      summary: get book data
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          required: true
+          description: name of the book to search
+      responses:
+        "200":
+          description: get book data success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                    example: 200
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/book"
+        "500":
+          $ref: "#/components/responses/500"
+  /v1/wishlist:
+    post:
+      tags:
+        - wishlist
+      summary: create wishlist data
+      requestBody:
+        description: request body to insert data
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uid:
+                  type: string
+                  example: a3f245ac-0a6a-4eaa-93e5-47ca0c443ce9
+                bookId:
+                  type: string
+                  example: BzqemZAlFdMC
+      responses:
+        "200":
+          description: create wishlist success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                    example: 200
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: object
+                    properties:
+                      uid:
+                        type: string
+                        example: a3f245ac-0a6a-4eaa-93e5-47ca0c443ce9
+                      bookId:
+                        type: string
+                        example: BzqemZAlFdMC
+
+        "400":
+          $ref: "#/components/responses/400"
+        "500":
+          $ref: "#/components/responses/500"
+  /v1/wishlist/:uid:
+    get:
+      tags:
+        - wishlist
+      summary: get wishlist data
+      parameters:
+        - $ref: "#/components/parameters/uid"
+      responses:
+        "200":
+          description: get wishlist success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                    example: 200
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/book"
+        "404":
+          $ref: "#/components/responses/404"
+        "500":
+          $ref: "#/components/responses/500"
+    delete:
+      tags:
+        - wishlist
+      summary: delete wishlist data
+      parameters:
+        - $ref: "#/components/parameters/uid"
+      responses:
+        "200":
+          description: delete wishlist success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: number
+                    example: 200
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    nullable: true
+                    example: null
+        "404":
+          $ref: "#/components/responses/404"
+        "500":
+          $ref: "#/components/responses/500"
+
+components:
+  schemas:
+    book:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            example: BzqemZAlFdMC
+          title:
+            type: string
+            example: Jungian Dream Interpretation
+    errors:
+      type: object
+      properties:
+        code:
+          type: number
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            error:
+              type: string
+
+  parameters:
+    uid:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+      description: uid of specified resource
+
+  responses:
+    "400":
+      description: Wrong input from the client
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/errors"
+          example:
+            code: 400
+            status: Bad Request
+            data:
+              error: column.UID validation error
+    "401":
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/errors"
+          example:
+            code: 401
+            status: Unauthorized
+            data:
+              error: No token provided
+    "404":
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/errors"
+          example:
+            code: 404
+            status: Not Found
+            data:
+              error: ID x8934yhf is not found!
+    "500":
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/errors"
+          example:
+            code: 500
+            status: Internal Server Error
+            data:
+              error: pg.Name is not integer!
