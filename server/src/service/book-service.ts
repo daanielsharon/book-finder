@@ -11,7 +11,7 @@ class BookService {
     if (!response)
       throw new ResponseError(Code.NOT_FOUND, "no response from google-book");
 
-    return response.items.map((item) => ({
+    return response.items?.map((item) => ({
       id: item.id,
       title: item.volumeInfo.title,
       authors: item.volumeInfo.authors,

@@ -1,14 +1,19 @@
 import { ResponseError } from "../error/response-error.ts";
 import { pool } from "../index.ts";
+import { Collection } from "../ts/enum/collection.ts";
 import { Code } from "../ts/enum/json.ts";
-import { DomainSave } from "../ts/interface/wishlist.ts";
+import {
+  DomainDelete,
+  DomainGet,
+  DomainSave,
+} from "../ts/interface/wishlist.ts";
 
 class WishlistRepo {
   async save({ uid, bookId }: DomainSave) {
     try {
       const res = await pool
         .query()
-        ?.collection<DomainSave>("wishlist")
+        ?.collection<DomainSave>(Collection.WISHLIST)
         .insertOne({
           uid,
           bookId,
@@ -17,6 +22,58 @@ class WishlistRepo {
       return res;
     } catch (error) {
       console.error("save wishlist error", error);
+      if (error instanceof Error) {
+        throw new ResponseError(Code.INTERNAL_SERVER_ERROR, error.message);
+      }
+    }
+  }
+
+  async get({ uid, bookId }: DomainGet) {
+    try {
+      const res = await pool
+        .query()
+        ?.collection<DomainGet>(Collection.WISHLIST)
+        .findOne({
+          uid,
+          bookId,
+        });
+
+      return res;
+    } catch (error) {
+      console.error("get wishlist error", error);
+      if (error instanceof Error) {
+        throw new ResponseError(Code.INTERNAL_SERVER_ERROR, error.message);
+      }
+    }
+  }
+
+  async getById(uid: string) {
+    try {
+      const res = await pool
+        .query()
+        ?.collection<DomainGet>(Collection.WISHLIST)
+        .find({
+          uid,
+        })
+        .toArray();
+
+      return res;
+    } catch (error) {
+      console.error("get by id wishlist error", error);
+      if (error instanceof Error) {
+        throw new ResponseError(Code.INTERNAL_SERVER_ERROR, error.message);
+      }
+    }
+  }
+
+  async delete({ uid, bookId }: DomainDelete) {
+    try {
+      await pool.query()?.collection(Collection.WISHLIST).deleteOne({
+        uid,
+        bookId,
+      });
+    } catch (error) {
+      console.error("delete wishlist error", error);
       if (error instanceof Error) {
         throw new ResponseError(Code.INTERNAL_SERVER_ERROR, error.message);
       }

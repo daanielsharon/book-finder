@@ -5,4 +5,8 @@ export class WishlistValidation {
     uid: Joi.string().uuid().required(),
     bookId: Joi.string().min(1).required(),
   });
+
+  static delete = Joi.object({
+    bookId: Joi.string().min(1).required(),
+  });
 }

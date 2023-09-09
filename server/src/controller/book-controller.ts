@@ -12,7 +12,12 @@ class BookController {
       const res = await bookService.get(q as string);
       JSON.send(response, Code.OK, res);
     } catch (error) {
-      console.error("Error while getting book", error);
+      if (error instanceof Error) {
+        console.error("Error while getting book", error.message);
+      } else {
+        console.error("Error while getting book", error);
+      }
+
       next(error);
     }
   }

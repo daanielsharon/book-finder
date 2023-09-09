@@ -1,7 +1,7 @@
 export interface BookResponse {
   kind: string;
   totalItems: number;
-  items: {
+  items?: {
     id: string;
     volumeInfo: {
       title: string;
