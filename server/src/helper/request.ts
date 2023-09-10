@@ -9,7 +9,6 @@ export class HTTPS<T> {
       );
 
       const json = await response.json();
-      console.log(json);
       return json as T;
     } catch (error) {
       if (error instanceof Error) {

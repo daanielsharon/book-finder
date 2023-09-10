@@ -3,6 +3,26 @@
   padding: 20px 20%;
   position: relative;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.input {
+  padding-left: 15px;
+  justify-content: space-between !important;
+}
+
+.search {
+  width: 100% !important;
+}
+
+.loading {
+  margin-left: 20px;
 }

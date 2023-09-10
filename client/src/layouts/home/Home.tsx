@@ -6,7 +6,7 @@ import home from "./home.module.css";
 const Home = ({ children }: PropsWithChildren) => {
   return (
     <div className={`${home.view}`}>
-      <Navbar />
+      <Navbar key={1} />
       {children}
       {/* <Footer /> */}
     </div>
