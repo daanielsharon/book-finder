@@ -54,28 +54,32 @@ const Card = ({ item, uid, defaultChecked, setData }: Card) => {
 
   return (
     <div className={`${card.card}`}>
-      <img src={item.thumbnail.size.normal} className={`${card.image}`} />
+      <img src={item.thumbnail.size.normal} />
       <div className={`${card.info}`}>
-        <p>Title: {item.title} </p>
-        <p>Author: {item.authors.slice(0, 3).join(", ")}</p>
         <div>
-          <p>Rating:</p>
-          <Rating value={item.rating} readOnly />
+          <h2 className={`${card.title}`}>{item.title} </h2>
+          <p className={`${card.subtitle}`}>
+            {item.authors?.slice(0, 3)?.join(", ")}
+          </p>
         </div>
-        <div className={`${card.wishlist}`}>
-          <p>Wishlist</p>
-          {isLoading ? (
-            <CircularProgress />
-          ) : (
-            <Switch
-              checked={checked}
-              onChange={(_, newValue) => {
-                return checked
-                  ? handleRemoveWishlist()
-                  : handleAddWishlist(newValue);
-              }}
-            />
-          )}
+        <div>
+          <p className={`${card.rating}`}>Rating:</p>
+          <Rating value={item.rating} readOnly />
+          <div className={`${card.wishlist}`}>
+            <p className={`${card.wish}`}>Wishlist</p>
+            {isLoading ? (
+              <CircularProgress />
+            ) : (
+              <Switch
+                checked={checked}
+                onChange={(_, newValue) => {
+                  return checked
+                    ? handleRemoveWishlist()
+                    : handleAddWishlist(newValue);
+                }}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

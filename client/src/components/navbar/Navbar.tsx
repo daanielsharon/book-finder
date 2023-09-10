@@ -9,9 +9,9 @@ const Navbar = () => {
       role="navigation"
       aria-label="main navigation"
     >
-      <div>
+      <div className={`${navbar.image}`}>
         <a className="navbar-item">
-          <img src={reactImg} width="112" height="28" />
+          <img src={reactImg} />
         </a>
       </div>
 

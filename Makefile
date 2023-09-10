@@ -8,3 +8,8 @@ up_build:
 	@echo "Starting a new container"
 	docker compose up --build -d
 	@echo "All ready!"
+
+down: 
+	@echo "Stopping everything"
+	docker compose down
+	@echo "Done!"
