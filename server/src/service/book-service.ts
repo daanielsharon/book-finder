@@ -14,9 +14,9 @@ class BookService {
 
     return response.items?.map((item) => ({
       id: item.id,
-      title: item.volumeInfo?.title,
-      authors: item.volumeInfo?.authors,
-      rating: item.volumeInfo?.averageRating,
+      title: item.volumeInfo.title,
+      authors: item.volumeInfo.authors,
+      rating: item.volumeInfo.averageRating,
       thumbnail: {
         size: {
           small: item.volumeInfo.imageLinks?.smallThumbnail,

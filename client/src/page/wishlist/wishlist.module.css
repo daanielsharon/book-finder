@@ -4,6 +4,13 @@
   flex-wrap: wrap;
 }
 
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .content {
   margin-top: 60px;
   padding: 20px 20%;

@@ -36,11 +36,12 @@ class WishlistService {
       const newRes = await Promise.all(
         response.map(async (res) => {
           const data = await bookService.get(res.bookId);
-          if (data) return data[0];
+          if (data && data.length > 0) return data[0];
+          return null;
         })
       );
 
-      return newRes;
+      return newRes.filter((item) => item !== null);
     }
 
     throw new ResponseError(Code.NOT_FOUND, "no such data");

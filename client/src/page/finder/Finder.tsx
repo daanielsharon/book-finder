@@ -6,13 +6,14 @@ import { AxiosError } from "axios";
 import useIdentity from "../../hooks/useIdentity";
 import Home from "../../layouts/home/Home";
 import service from "../../service";
-import { Book, BookResponse } from "../../ts/book";
+import { Book } from "../../ts/book";
 import finder from "./finder.module.css";
 
 const Finder = () => {
   const uid = useIdentity();
   const inputRef = useRef<HTMLInputElement>(null);
-  const [data, setData] = useState<BookResponse | null>(null);
+  const [data, setData] = useState<Book[] | null>(null);
+  const [wishListData, setWishListData] = useState<Book[] | null>(null);
   const [loading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<{ status: boolean; message: string }>({
     status: false,
@@ -21,13 +22,18 @@ const Finder = () => {
 
   useEffect(() => {
     inputRef.current?.focus();
+    (async function () {
+      const res = await service.wishlist.get(uid);
+      setWishListData(res.data);
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSearch = async (input: string | undefined) => {
     if (input) {
       try {
         const response = await service.book.get(input);
-        setData(response);
+        setData(response.data);
         setIsLoading(false);
       } catch (error) {
         if (error instanceof AxiosError) {
@@ -84,13 +90,19 @@ const Finder = () => {
         </div>
         <div className={`${finder.card}`}>
           {data &&
-            data.data.map((item: Book, index: number) => (
+            data.map((item: Book, index: number) => (
               <Card
                 key={index}
                 item={item}
                 uid={uid}
-                defaultChecked={false}
-                setData={setData}
+                defaultChecked={
+                  wishListData
+                    ? wishListData.filter((wishList) => wishList.id === item.id)
+                        .length > 0
+                      ? true
+                      : false
+                    : false
+                }
               />
             ))}
         </div>

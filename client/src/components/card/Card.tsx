@@ -1,22 +1,24 @@
 import card from "./card.module.css";
 // import reactsvg from "../../assets/react.svg";
-import { Rating, Switch } from "@mui/material";
+import { CircularProgress, Rating, Switch } from "@mui/material";
 import { useState } from "react";
-import { Book, BookResponse } from "../../ts/book";
 import service from "../../service";
+import { Book } from "../../ts/book";
 
 interface Card {
   item: Book;
   uid: string;
   defaultChecked: boolean;
-  setData: (value: (prevVar: BookResponse | null) => BookResponse) => void;
+  setData?: (value: (prevVar: Book[] | null) => Book[] | null) => void;
 }
 
-const Card = ({ item, uid, defaultChecked }: Card) => {
+const Card = ({ item, uid, defaultChecked, setData }: Card) => {
   const [checked, setChecked] = useState<boolean>(defaultChecked);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleAddWishlist = async (value: boolean) => {
     try {
+      setIsLoading(true);
       const response = await service.wishlist.add({
         uid,
         title: item.title,
@@ -24,17 +26,29 @@ const Card = ({ item, uid, defaultChecked }: Card) => {
       });
       if (response) {
         setChecked(value);
+        setIsLoading(false);
       }
     } catch (error) {
+      setIsLoading(false);
       console.error("error adding wishlist", error);
     }
   };
 
   const handleRemoveWishlist = async () => {
     try {
+      setIsLoading(true);
       await service.wishlist.remove(uid, item.id, item.title);
+      setChecked(false);
+      setIsLoading(false);
+      setData &&
+        setData((prev) => {
+          if (prev) {
+            return prev.filter((data) => data.id !== item.id);
+          }
+          return null;
+        });
     } catch (error) {
-      console.error("error removing wishlist");
+      console.error("error removing wishlist", error);
     }
   };
 
@@ -50,12 +64,18 @@ const Card = ({ item, uid, defaultChecked }: Card) => {
         </div>
         <div className={`${card.wishlist}`}>
           <p>Wishlist</p>
-          <Switch
-            checked={checked}
-            onChange={(_, newValue) => {
-              checked ? handleRemoveWishlist() : handleAddWishlist(newValue);
-            }}
-          />
+          {isLoading ? (
+            <CircularProgress />
+          ) : (
+            <Switch
+              checked={checked}
+              onChange={(_, newValue) => {
+                return checked
+                  ? handleRemoveWishlist()
+                  : handleAddWishlist(newValue);
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
