@@ -7,11 +7,13 @@ import {
 
 const add = async ({
   uid,
+  title,
   bookId,
 }: WishlistCreateRequest): Promise<WishlistCreateResponse> => {
   const url = "/wishlist";
   const data = {
     uid,
+    title,
     bookId,
   };
 
@@ -25,8 +27,12 @@ const get = async (uid: string): Promise<WishlistGetResponse> => {
   return response;
 };
 
-const remove = async (uid: string): Promise<void> => {
-  const url = `/wishlist/${uid}`;
+const remove = async (
+  uid: string,
+  bookId: string,
+  title: string
+): Promise<void> => {
+  const url = `/wishlist/${uid}?bookId=${bookId}&title=${title}`;
   await new Api<WishlistGetResponse>().delete(url);
 };
 

@@ -12,6 +12,10 @@
           "small": "http://books.google.com/books/content?id=BzqemZAlFdMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=BzqemZAlFdMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "ISBN_10",
+        "identifier": "0919123120"
       }
     },
     {
@@ -23,6 +27,10 @@
           "small": "http://books.google.com/books/content?id=PJMVLvWqTbQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=PJMVLvWqTbQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "ISBN_13",
+        "identifier": "9781612833262"
       }
     },
     {
@@ -46,17 +54,10 @@
           "small": "http://books.google.com/books/content?id=ckj9DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=ckj9DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
-      }
-    },
-    {
-      "id": "8_0zigLFtFAC",
-      "title": "Recurring Dream Symbols",
-      "authors": ["Kathleen Sullivan"],
-      "thumbnail": {
-        "size": {
-          "small": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "normal": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+      },
+      "isbn": {
+        "type": "ISBN_13",
+        "identifier": "9786237961284"
       }
     },
     {
@@ -68,6 +69,10 @@
           "small": "http://books.google.com/books/content?id=oULuAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=oULuAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "OTHER",
+        "identifier": "UOM:39015001445264"
       }
     },
     {
@@ -83,6 +88,10 @@
           "small": "http://books.google.com/books/content?id=Zuq5T_FhHnIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=Zuq5T_FhHnIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "ISBN_10",
+        "identifier": "0195152786"
       }
     },
     {
@@ -94,6 +103,10 @@
           "small": "http://books.google.com/books/content?id=1qVWAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=1qVWAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "OTHER",
+        "identifier": "PSU:000048763073"
       }
     },
     {
@@ -105,6 +118,10 @@
           "small": "http://books.google.com/books/content?id=_W1RAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=_W1RAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "OTHER",
+        "identifier": "UVA:X001260943"
       }
     },
     {
@@ -116,6 +133,10 @@
           "small": "http://books.google.com/books/content?id=AxqqCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=AxqqCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "ISBN_13",
+        "identifier": "9781517575403"
       }
     },
     {
@@ -127,6 +148,25 @@
           "small": "http://books.google.com/books/content?id=y41FDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
           "normal": "http://books.google.com/books/content?id=y41FDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         }
+      },
+      "isbn": {
+        "type": "ISBN_13",
+        "identifier": "9789811075339"
+      }
+    },
+    {
+      "id": "8_0zigLFtFAC",
+      "title": "Recurring Dream Symbols",
+      "authors": ["Kathleen Sullivan"],
+      "thumbnail": {
+        "size": {
+          "small": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "normal": "http://books.google.com/books/content?id=8_0zigLFtFAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      },
+      "isbn": {
+        "type": "ISBN_10",
+        "identifier": "0809141841"
       }
     }
   ]

@@ -5,13 +5,14 @@ import { Code } from "../ts/enum/json";
 import { DomainDelete, DomainGet, DomainSave } from "../ts/interface/wishlist";
 
 class WishlistRepo {
-  async save({ uid, bookId }: DomainSave) {
+  async save({ uid, title, bookId }: DomainSave) {
     try {
       const res = await pool
         .query()
         ?.collection<DomainSave>(Collection.WISHLIST)
         .insertOne({
           uid,
+          title,
           bookId,
         });
 
@@ -24,13 +25,14 @@ class WishlistRepo {
     }
   }
 
-  async get({ uid, bookId }: DomainGet) {
+  async get({ uid, title, bookId }: DomainGet) {
     try {
       const res = await pool
         .query()
         ?.collection<DomainGet>(Collection.WISHLIST)
         .findOne({
           uid,
+          title,
           bookId,
         });
 
@@ -62,10 +64,11 @@ class WishlistRepo {
     }
   }
 
-  async delete({ uid, bookId }: DomainDelete) {
+  async delete({ uid, title, bookId }: DomainDelete) {
     try {
       await pool.query()?.collection(Collection.WISHLIST).deleteOne({
         uid,
+        title,
         bookId,
       });
     } catch (error) {

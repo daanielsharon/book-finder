@@ -34,6 +34,7 @@ const Finder = () => {
           setIsLoading(false);
           console.error(error.message);
           setError({ status: true, message: error.message });
+          return;
         }
 
         setIsLoading(false);
@@ -97,13 +98,14 @@ const Finder = () => {
           open={error.status}
           autoHideDuration={6000}
           onClose={() => setError({ status: false, message: "" })}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
         >
           <Alert
             onClose={() => setError({ status: false, message: "" })}
-            severity="success"
+            severity="error"
             sx={{ width: "100%" }}
           >
-            This is a success message!
+            {error.message}
           </Alert>
         </Snackbar>
       </div>

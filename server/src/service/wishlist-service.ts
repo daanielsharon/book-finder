@@ -11,7 +11,7 @@ class WishlistService {
   async create(request: Request): Promise<WebSave> {
     const result: WebSave = validate(WishlistValidation.save, request);
 
-    const response = await bookService.get(result.bookId);
+    const response = await bookService.get(result.title);
     if (!response)
       throw new ResponseError(Code.NOT_FOUND, "book does not exist");
 
@@ -31,13 +31,12 @@ class WishlistService {
     const response = await wishlistRepo.getById(uid);
 
     if (response) {
-      if (response.length == 0)
-        throw new ResponseError(Code.NOT_FOUND, "no such user id");
+      if (response.length == 0) return null;
 
       const newRes = await Promise.all(
         response.map(async (res) => {
           const data = await bookService.get(res.bookId);
-          return data;
+          if (data) return data[0];
         })
       );
 
@@ -47,14 +46,20 @@ class WishlistService {
     throw new ResponseError(Code.NOT_FOUND, "no such data");
   }
 
-  async delete(request: Request, uid: string): Promise<void> {
-    const result: WebDelete = validate(WishlistValidation.delete, request);
-
-    const exist = wishlistRepo.get({ uid, bookId: result.bookId });
+  async delete(request: WebDelete): Promise<void> {
+    const exist = wishlistRepo.get({
+      uid: request.uid,
+      title: request.title,
+      bookId: request.bookId,
+    });
     if (!exist)
       throw new ResponseError(Code.BAD_REQUEST, "no such wishlist available");
 
-    await wishlistRepo.delete({ uid, bookId: result.bookId });
+    await wishlistRepo.delete({
+      uid: request.uid,
+      title: request.title,
+      bookId: request.bookId,
+    });
   }
 }
 

@@ -17,12 +17,24 @@ const Card = ({ item, uid, defaultChecked }: Card) => {
 
   const handleAddWishlist = async (value: boolean) => {
     try {
-      const response = await service.wishlist.add({ uid, bookId: item.id });
+      const response = await service.wishlist.add({
+        uid,
+        title: item.title,
+        bookId: item.id,
+      });
       if (response) {
         setChecked(value);
       }
     } catch (error) {
       console.error("error adding wishlist", error);
+    }
+  };
+
+  const handleRemoveWishlist = async () => {
+    try {
+      await service.wishlist.remove(uid, item.id, item.title);
+    } catch (error) {
+      console.error("error removing wishlist");
     }
   };
 
@@ -41,7 +53,7 @@ const Card = ({ item, uid, defaultChecked }: Card) => {
           <Switch
             checked={checked}
             onChange={(_, newValue) => {
-              handleAddWishlist(newValue);
+              checked ? handleRemoveWishlist() : handleAddWishlist(newValue);
             }}
           />
         </div>

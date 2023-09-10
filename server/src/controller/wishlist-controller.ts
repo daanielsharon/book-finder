@@ -40,9 +40,15 @@ class WishlistController {
   async delete(request: Request, response: Response, next: NextFunction) {
     try {
       const uid = request.params.id;
+      const { bookId, title } = request.query;
       if (!uid) throw new ResponseError(Code.BAD_REQUEST, "id is required");
+      if (!bookId) throw new ResponseError(Code.BAD_REQUEST, "id is required");
 
-      await wishlistService.delete(request.body, uid);
+      await wishlistService.delete({
+        uid,
+        bookId: bookId as string,
+        title: title as string,
+      });
       JSON.send(response, Code.OK, null);
     } catch (error) {
       if (error instanceof Error) {

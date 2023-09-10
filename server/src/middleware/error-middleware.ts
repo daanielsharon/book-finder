@@ -14,5 +14,5 @@ export const errorMiddleware: ErrorRequestHandler = (err, req, res, next) => {
     return;
   }
 
-  JSON.send(res, Code.INTERNAL_SERVER_ERROR, null);
+  JSON.send(res, Code.INTERNAL_SERVER_ERROR, { error: err.message });
 };
